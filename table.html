@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Table Example - S.No, Description, Real-world Use</title>
+  <style>
+    body{font-family:Segoe UI, Roboto, Arial, sans-serif;margin:20px;background:#f7f9fc;color:#222}
+    .wrap{max-width:980px;margin:0 auto;background:#fff;padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(20,30,60,0.06)}
+    h1{margin:0 0 12px;font-size:20px}
+    p.small{color:#556;margin:0 0 16px}
+    .table-container{overflow:auto}
+    table{width:100%;border-collapse:collapse;min-width:640px}
+    thead th{background:#0b79ff;color:#fff;padding:10px 12px;text-align:left;position:sticky;top:0}
+    tbody td{padding:10px 12px;border-bottom:1px solid #eef2f7}
+    tbody tr:nth-child(even){background:#fbfdff}
+    .sno{width:64px}
+    @media (max-width:560px){thead th,tbody td{padding:8px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Sample Table</h1>
+    <p class="small">Columns: <strong>S.No</strong>, <strong>Description</strong>, and <strong>Real-world Use</strong>. Replace or add rows as needed.</p>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th class="sno">S.No</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Real-world Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><img src="assets/img1.jpg" alt="Engine" style="width:120px;height:70px;object-fit:cover;border-radius:6px;border:1px solid #e6e9ef"></td>
+            <td>Engine</td>
+            <td>Provides power to move the vehicle; central component of cars and trucks.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><img src="assets/img1.jpg" alt="Transmission" style="width:120px;height:70px;object-fit:cover;border-radius:6px;border:1px solid #e6e9ef"></td>
+            <td>Transmission</td>
+            <td>Transfers engine power to the wheels; enables speed/torque changes for driving.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><img src="assets/img1.jpg" alt="Airbags" style="width:120px;height:70px;object-fit:cover;border-radius:6px;border:1px solid #e6e9ef"></td>
+            <td>Airbags</td>
+            <td>Safety devices that deploy on impact to protect occupants during collisions.</td>
+          </tr>
+          
+          </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
