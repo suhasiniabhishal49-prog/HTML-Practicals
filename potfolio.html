@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio — Suhasini</title>
+    <style>
+        :root{--accent:#0b79ff;--muted:#6b7280;--bg:#f6f8fb;font-family:Segoe UI, Roboto, Arial, sans-serif}
+        *{box-sizing:border-box}
+        body{margin:0;background:var(--bg);color:#0b2338}
+        .site{max-width:1100px;margin:28px auto;padding:20px}
+        header{display:flex;align-items:center;gap:16px}
+        .avatar{width:96px;height:96px;border-radius:12px;object-fit:cover;border:3px solid #fff;box-shadow:0 6px 18px rgba(11,23,56,0.06)}
+        h1{margin:0;font-size:22px}
+        .lead{color:var(--muted);margin:4px 0 0}
+
+        nav{margin-top:18px;display:flex;gap:12px}
+        nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
+        nav a:hover{background:#fff;color:var(--accent)}
+
+        main{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-top:18px}
+        .card{background:#fff;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(11,23,56,0.04)}
+
+        .projects .project{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #f1f5f9}
+        .projects .project:last-child{border-bottom:0}
+        .proj-thumb{width:120px;height:72px;border-radius:8px;object-fit:cover;background:#eef2f7}
+        .proj-meta h3{margin:0 0 6px;font-size:16px}
+        .proj-meta p{margin:0;color:var(--muted);font-size:14px}
+        .tags{margin-top:8px}
+        .tag{display:inline-block;background:#eef7ff;color:var(--accent);padding:6px 8px;border-radius:999px;font-size:12px;margin-right:6px}
+
+        .skills ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+        .skills li{background:#f3f6fb;padding:8px 10px;border-radius:8px;color:var(--muted)}
+
+        .contact p{margin:6px 0}
+        footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+        @media (max-width:880px){main{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <div class="site">
+        <header>
+            <img class="avatar" src="/e1.jpg" alt="Suhasini avatar">
+            <div>
+                <h1>Suhasini</h1>
+                <div class="lead">Front-end developer • UI/UX enthusiast • Open-source contributor</div>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="card about" id="about">
+                <h2>About Me</h2>
+                <p class="lead">Hi — I'm a developer who builds accessible, responsive web interfaces. I enjoy turning complex problems into clean, user-friendly designs and learning new technologies.</p>
+                <p>I have experience with HTML, CSS, JavaScript, and modern frameworks. I care about performance, accessibility, and maintainable code.</p>
+            </section>
+
+            <aside class="card contact" id="contact">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                <p>Location: City, Country</p>
+                <p>Links:</p>
+                <p><a href="#">GitHub</a> • <a href="#">LinkedIn</a></p>
+            </aside>
+
+            <section class="card projects" id="projects">
+                <h2>Projects</h2>
+                <div class="project">
+                    <img class="proj-thumb" src="./prg1.jpeg" alt="Project 1">
+                    <p>A to-do list application project aims to develop a tool that assists users in managing and organizing their daily tasks and activities. The application provides a digital platform for users to create, track, and prioritize their tasks, thereby enhancing productivity and reducing the likelihood of forgetting important items.</p>
+                    <div class="proj-meta">
+                        <h3> To-do list Project One</h3>
+                        <p>Short description of the project. What it does and the technologies used.</p>
+                        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <img class="proj-thumb" src="./prj2.png" alt="Project 2">
+                    <p>Building a weather app project using HTML and CSS typically involves creating the user interface and styling the elements. While a fully functional weather app also requires JavaScript to fetch and display weather data from an API, the HTML and CSS lay the foundation.</p>
+                    <div class="proj-meta">
+                        <h3>Weather App Project Two</h3>
+                        <p>Short description of the project. What it does and the technologies used.</p>
+                        <div class="tags"><span class="tag">React</span><span class="tag">API</span></div>
+                    </div>
+                </div>
+
+            </section>
+
+            <aside class="card skills" id="skills">
+                <h3>Skills</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Responsive Design</li>
+                    <li>Git</li>
+                    <li>Accessibility</li>
+                </ul>
+
+                <h3 style="margin-top:14px">Education</h3>
+                <p style="color:var(--muted);margin:6px 0 0">B.Sc. in Computer Science — University Name</p>
+            </aside>
+        </main>
+
+        <footer>
+            <div class="card">
+                <p>Made with ❤️ — Suhasini • <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
