@@ -1,119 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio — Suhasini</title>
-    <style>
-        :root{--accent:#0b79ff;--muted:#6b7280;--bg:#f6f8fb;font-family:Segoe UI, Roboto, Arial, sans-serif}
-        *{box-sizing:border-box}
-        body{margin:0;background:var(--bg);color:#0b2338}
-        .site{max-width:1100px;margin:28px auto;padding:20px}
-        header{display:flex;align-items:center;gap:16px}
-        .avatar{width:96px;height:96px;border-radius:12px;object-fit:cover;border:3px solid #fff;box-shadow:0 6px 18px rgba(11,23,56,0.06)}
-        h1{margin:0;font-size:22px}
-        .lead{color:var(--muted);margin:4px 0 0}
-
-        nav{margin-top:18px;display:flex;gap:12px}
-        nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
-        nav a:hover{background:#fff;color:var(--accent)}
-
-        main{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-top:18px}
-        .card{background:#fff;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(11,23,56,0.04)}
-
-        .projects .project{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #f1f5f9}
-        .projects .project:last-child{border-bottom:0}
-        .proj-thumb{width:120px;height:72px;border-radius:8px;object-fit:cover;background:#eef2f7}
-        .proj-meta h3{margin:0 0 6px;font-size:16px}
-        .proj-meta p{margin:0;color:var(--muted);font-size:14px}
-        .tags{margin-top:8px}
-        .tag{display:inline-block;background:#eef7ff;color:var(--accent);padding:6px 8px;border-radius:999px;font-size:12px;margin-right:6px}
-
-        .skills ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
-        .skills li{background:#f3f6fb;padding:8px 10px;border-radius:8px;color:var(--muted)}
-
-        .contact p{margin:6px 0}
-        footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
-
-        @media (max-width:880px){main{grid-template-columns:1fr}}
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <div class="site">
+    <style>
+        :root{
+            --bg:#0f1724;
+            --card:#0b1220;
+            --accent:#06b6d4;
+            --muted:#94a3b8;
+            --glass: rgba(255,255,255,0.04);
+            --radius:12px;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%;margin:0;background:linear-gradient(180deg,#071021 0%, #081827 55%, #07101a 100%);color:#e6eef6}
+        a{color:var(--accent);text-decoration:none}
+        .container{max-width:1100px;margin:40px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:16px;box-shadow:0 8px 40px rgba(2,6,23,0.6)}
+        header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:22px}
+        .brand{display:flex;align-items:center;gap:14px}
+        .logo{
+            width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#02111a;
+            box-shadow:0 6px 24px rgba(6,182,212,0.12), inset 0 -6px 18px rgba(255,255,255,0.03);
+        }
+        h1{font-size:20px;margin:0}
+        nav{display:flex;gap:14px;align-items:center}
+        nav a{padding:8px 12px;border-radius:10px;background:transparent;font-weight:600;color:var(--muted)}
+        nav a:hover{background:var(--glass);color:#e6eef6}
+        .hero{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;margin-bottom:28px}
+        .intro{padding:22px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02))}
+        .intro h2{margin:0 0 8px 0;font-size:26px}
+        .intro p{margin:0;color:var(--muted);line-height:1.45}
+        .stats{display:flex;gap:12px;margin-top:16px}
+        .stat{background:rgba(255,255,255,0.02);padding:10px 12px;border-radius:10px;font-weight:700}
+        .card{padding:18px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.015),transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)}
+        .profile{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
+        .avatar{width:120px;height:120px;border-radius:18px;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#02111a;font-size:36px;box-shadow:0 10px 30px rgba(7,13,22,0.6)}
+        .contact a{display:inline-block;margin-top:8px;padding:8px 14px;border-radius:10px;background:var(--accent);color:#02111a;font-weight:700}
+        /* Projects grid */
+        .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:26px}
+        .project{border-radius:12px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);cursor:default;transition:transform .25s, box-shadow .25s}
+        .project:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(6,6,15,0.6)}
+        .thumb{height:140px;background:linear-gradient(135deg,#102437, #08202a);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+        .pinfo{padding:12px}
+        .pinfo h3{margin:0 0 6px 0;font-size:16px}
+        .pinfo p{margin:0;color:var(--muted);font-size:13px;line-height:1.35}
+        .tags{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+        .tag{padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:12px;color:var(--muted)}
+        /* About + contact area */
+        .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+        .about p{color:var(--muted);line-height:1.6}
+        footer{margin-top:22px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;color:var(--muted);font-size:13px}
+        /* Responsive */
+        @media (max-width:980px){
+            .hero{grid-template-columns:1fr}
+            .projects{grid-template-columns:repeat(2,1fr)}
+            .split{grid-template-columns:1fr}
+        }
+        @media (max-width:560px){
+            .projects{grid-template-columns:1fr}
+            header{flex-direction:column;align-items:flex-start}
+            nav{width:100%;justify-content:space-between}
+        }
+    </style>
+
+    <div class="container">
         <header>
-            <img class="avatar" src="/e1.jpg" alt="Suhasini avatar">
-            <div>
-                <h1>Suhasini</h1>
-                <div class="lead">Front-end developer • UI/UX enthusiast • Open-source contributor</div>
-                <nav>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contact</a>
-                </nav>
+            <div class="brand">
+                
+                <div>
+                    <h1>Suhasini Abhishal</h1>
+                    <img src = ./e1.jpg width="300px"height="300px">
+                    <div style="color:var(--muted);font-size:13px">Frontend developer — HTML & CSS</div>
+                </div>
             </div>
+            <nav>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </header>
 
-        <main>
-            <section class="card about" id="about">
-                <h2>About Me</h2>
-                <p class="lead">Hi — I'm a developer who builds accessible, responsive web interfaces. I enjoy turning complex problems into clean, user-friendly designs and learning new technologies.</p>
-                <p>I have experience with HTML, CSS, JavaScript, and modern frameworks. I care about performance, accessibility, and maintainable code.</p>
-            </section>
+        <section class="hero">
+            <div class="intro card">
+                <h2>Hello — I build clean, accessible interfaces</h2>
+                <p>I design and code web experiences using semantic HTML and modern CSS. I focus on performance, responsiveness and maintainable structure.</p>
 
-            <aside class="card contact" id="contact">
-                <h3>Contact</h3>
-                <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-                <p>Location: City, Country</p>
-                <p>Links:</p>
-                <p><a href="#">GitHub</a> • <a href="#">LinkedIn</a></p>
-            </aside>
-
-            <section class="card projects" id="projects">
-                <h2>Projects</h2>
-                <div class="project">
-                    <img class="proj-thumb" src="./prg1.jpeg" alt="Project 1">
-                    <p>A to-do list application project aims to develop a tool that assists users in managing and organizing their daily tasks and activities. The application provides a digital platform for users to create, track, and prioritize their tasks, thereby enhancing productivity and reducing the likelihood of forgetting important items.</p>
-                    <div class="proj-meta">
-                        <h3> To-do list Project One</h3>
-                        <p>Short description of the project. What it does and the technologies used.</p>
-                        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
-                    </div>
+                <div class="stats" aria-hidden="true">
+                    <div class="stat">4 Projects</div>
+                    <div class="stat">2 Clients</div>
+                    <div class="stat">2 yrs Experience</div>
                 </div>
+            </div>
 
-                <div class="project">
-                    <img class="proj-thumb" src="./prj2.png" alt="Project 2">
-                    <p>Building a weather app project using HTML and CSS typically involves creating the user interface and styling the elements. While a fully functional weather app also requires JavaScript to fetch and display weather data from an API, the HTML and CSS lay the foundation.</p>
-                    <div class="proj-meta">
-                        <h3>Weather App Project Two</h3>
-                        <p>Short description of the project. What it does and the technologies used.</p>
-                        <div class="tags"><span class="tag">React</span><span class="tag">API</span></div>
-                    </div>
+            <aside class="card profile">
+                <img src="./e1.jpg"width="100px"height="100px">
+                <div style="font-weight:700">Suhasini Abhishal</div>
+                <div style="color:var(--muted);font-size:14px">Kalaburagi Karnataka • Open to remote</div>
+                <div class="contact">
+                    <a href="mailto:hello@example.com">hello@example.com</a>
                 </div>
-
-            </section>
-
-            <aside class="card skills" id="skills">
-                <h3>Skills</h3>
-                <ul>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
-                    <li>Responsive Design</li>
-                    <li>Git</li>
-                    <li>Accessibility</li>
-                </ul>
-
-                <h3 style="margin-top:14px">Education</h3>
-                <p style="color:var(--muted);margin:6px 0 0">B.Sc. in Computer Science — University Name</p>
             </aside>
-        </main>
+        </section>
+
+        <section id="projects" class="card">
+            <h2 style="margin:0 0 12px 0">Selected projects</h2>
+            <div class="projects">
+                <article class="project">
+                    <img src="./p1.jpg"width="300px"height="100px">
+                    <div class="pinfo">
+                        <h3>Product Landing</h3>
+                        <p>A responsive landing page focused on conversions, built with semantic markup and flexible grid layouts.</p>
+                        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS Grid</span><span class="tag">Responsive</span></div>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <img src="./p2.jpeg"width="300px"height="100px">
+                    <div class="pinfo">
+                        <h3>Portfolio Site</h3>
+                        <p>Minimal portfolio with accessible components and lightweight CSS for fast load times.</p>
+                        <div class="tags"><span class="tag">HTML</span><span class="tag">Flexbox</span><span class="tag">Accessibility</span></div>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <img src="./p3.jpg"width="300px"height="100px">
+                    <div class="pinfo">
+                        <h3>Documentation</h3>
+                        <p>Structured documentation template with consistent typography and clear hierarchy.</p>
+                        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Typography</span></div>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <img src="./p4.jpg"width="300px"height="100px">
+                    <div class="pinfo">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Compact dashboard layout showcasing KPI cards and responsive tables using pure CSS.</p>
+                        <div class="tags"><span class="tag">CSS Grid</span><span class="tag">UI</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="split" style="margin-top:18px">
+            <div class="card about">
+                <h2 style="margin-top:0">About me</h2>
+                <p>I build pixel-perfect interfaces using only HTML and CSS. I enjoy simplifying complex UI into reusable patterns and ensuring everything is keyboard-friendly and performant.</p>
+                <p style="color:var(--muted);font-size:13px;margin-top:10px">Skills: HTML5 · CSS3 · Responsive Design · Accessibility · Performance</p>
+            </div>
+
+            <div class="card" id="contact">
+                <h2 style="margin-top:0">Contact</h2>
+                <p style="color:var(--muted)">Interested in working together? Send a message and I’ll get back to you.</p>
+                <form action="#" style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+                    <input type="text" placeholder="Your name" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+                    <input type="email" placeholder="Your email" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+                    <textarea placeholder="Message" rows="4" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+                    <button type="submit" style="padding:10px;border-radius:10px;border:none;background:var(--accent);font-weight:700;color:#02111a;cursor:pointer">Send message</button>
+                </form>
+            </div>
+        </section>
 
         <footer>
-            <div class="card">
-                <p>Made with ❤️ — Suhasini • <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <div>© <span id="year"></span> Patricia Cooper</div>
+            <div style="display:flex;gap:12px">
+                <a href="#">GitHub</a>
+                <a href="#">Dribbble</a>
+                <a href="#">Twitter</a>
             </div>
         </footer>
     </div>
+
+    <script>
+        // small enhancement to set the current year (still HTML+CSS primary; tiny script optional)
+        try{document.getElementById('year').textContent = new Date().getFullYear()}catch(e){}
+    </script>
 </body>
 </html>
